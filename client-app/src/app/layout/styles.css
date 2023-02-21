@@ -1,0 +1,13 @@
+body {
+  background-color: honeydew;
+}
+
+.ui.inverted.top.fixed.menu {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 28, 121, 0.6279761904761905) 32%,
+    rgba(9, 107, 121, 0.8128501400560224) 98%
+  );
+}
