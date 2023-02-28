@@ -1,19 +1,25 @@
 import { observer } from "mobx-react-lite";
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Button, Form, Segment } from "semantic-ui-react";
+import Loading from "../../../app/layout/Loading";
 import { useStore } from "../../../app/stores/store";
+import { v4 as uuid } from "uuid";
 
 export default observer(function ActivityForm() {
 	const { activityStore } = useStore();
 	const {
-		selectedActivity,
-		closeForm,
 		createActivity,
 		updateActivity,
 		loading,
+		loadActivity,
+		loadingInitial,
 	} = activityStore;
 
-	const initialActivity = selectedActivity ?? {
+	const { id } = useParams();
+	const navigate = useNavigate();
+
+	const [activity, setActivity] = useState({
 		id: "",
 		title: "",
 		description: "",
@@ -21,9 +27,11 @@ export default observer(function ActivityForm() {
 		date: "",
 		city: "",
 		venue: "",
-	};
+	});
 
-	const [activity, setActivity] = useState(initialActivity);
+	useEffect(() => {
+		if (id) loadActivity(id).then((activity) => setActivity(activity!));
+	}, [id, loadActivity]);
 
 	function handleInputChange(
 		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -33,8 +41,19 @@ export default observer(function ActivityForm() {
 	}
 
 	function handleOnSubmit() {
-		activity.id ? updateActivity(activity) : createActivity(activity);
+		if (!activity.id) {
+			activity.id = uuid();
+			createActivity(activity).then(() =>
+				navigate(`/events/${activity.id}`)
+			);
+		} else {
+			updateActivity(activity).then(() =>
+				navigate(`/events/${activity.id}`)
+			);
+		}
 	}
+
+	if (loadingInitial) return <Loading content="Loading activity..." />;
 
 	return (
 		<Segment clearing>
@@ -90,7 +109,8 @@ export default observer(function ActivityForm() {
 					floated="right"
 					color="grey"
 					content="Cancel"
-					onClick={closeForm}
+					as={Link}
+					to={activity.id ? `/events/${id}` : "/events"}
 				/>
 			</Form>
 		</Segment>
