@@ -1,13 +1,50 @@
 body {
-  background-color: honeydew;
+	background-color: honeydew;
 }
 
 .ui.inverted.top.fixed.menu {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 28, 121, 0.6279761904761905) 32%,
-    rgba(9, 107, 121, 0.8128501400560224) 98%
-  );
+	background: rgb(2, 0, 36);
+	background: linear-gradient(
+		90deg,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(9, 28, 121, 0.6279761904761905) 32%,
+		rgba(9, 107, 121, 0.8128501400560224) 98%
+	);
 }
+
+.react-calendar {
+	width: 100% !important;
+	border: none !important;
+	box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%);
+}
+
+/*home page styles*/
+
+.masthead {
+	display: flex;
+	align-items: center;
+	background: linear-gradient(
+		90deg,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(9, 28, 121, 0.6279761904761905) 32%,
+		rgba(9, 107, 121, 0.8128501400560224) 98%
+	) !important;
+	height: 100vh;
+}
+
+.masthead .ui.menu .ui.button,
+.ui.menu a.ui.inverted.button {
+	margin-left: 0.5em;
+}
+
+.masthead h1.ui.header {
+	font-size: 4em;
+	font-weight: normal;
+}
+
+.masthead h2 {
+	font-size: 1.7em;
+	font-weight: normal;
+}
+
+/*end home page styles*/
