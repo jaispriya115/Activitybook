@@ -5,7 +5,7 @@ import { Button, Header, Segment } from "semantic-ui-react";
 import Loading from "../../../app/layout/Loading";
 import { useStore } from "../../../app/stores/store";
 import { v4 as uuid } from "uuid";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import TextInput from "../../../app/common/form/TextInput";
 import TextArea from "../../../app/common/form/TextArea";

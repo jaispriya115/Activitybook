@@ -14,7 +14,7 @@ export default observer(function ActivityDashboard() {
 		if (activities.size <= 1) loadActivities();
 	}, [activities.size, loadActivities]);
 
-	if (loadingInitial) return <Loading />;
+	if (loadingInitial) return <Loading content="Loading events ..." />;
 
 	return (
 		<Grid>
