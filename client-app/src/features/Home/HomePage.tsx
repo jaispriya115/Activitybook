@@ -30,6 +30,11 @@ export default observer(function HomePage() {
 				</Header>
 				{userStore.isLoggedIn ? (
 					<>
+						<Header
+							as="h2"
+							inverted
+							content={`Hello ${userStore.user?.displayName} !!`}
+						/>
 						<Button
 							as={Link}
 							to="/events"
