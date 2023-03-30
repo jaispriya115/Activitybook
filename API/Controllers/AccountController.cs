@@ -48,7 +48,7 @@ namespace API.Controllers
                 ModelState.AddModelError("email", "Email is already taken");
                 return ValidationProblem();
             }
-            if (await _userManager.Users.AnyAsync(x => x.UserName == registerDto.UserName))
+            if (await _userManager.Users.AnyAsync(x => x.UserName == registerDto.Username))
             {
                 ModelState.AddModelError("username", "Username is already taken");
                 return ValidationProblem();
@@ -85,7 +85,7 @@ namespace API.Controllers
                 DisplayName = user.DisplayName,
                 Token = _token.CreateToken(user),
                 Image = null,
-                UserName = user.UserName
+                Username = user.UserName
             };
         }
     }

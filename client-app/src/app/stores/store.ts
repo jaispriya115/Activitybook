@@ -5,15 +5,15 @@ import ModalStore from "./modalStore";
 import UserStore from "./userStore";
 
 interface Store {
-	activityStore: ActivityStore;
 	userStore: UserStore;
+	activityStore: ActivityStore;
 	commonStore: CommonStore;
 	modalStore: ModalStore;
 }
 
 export const store: Store = {
-	activityStore: new ActivityStore(),
 	userStore: new UserStore(),
+	activityStore: new ActivityStore(),
 	commonStore: new CommonStore(),
 	modalStore: new ModalStore(),
 };

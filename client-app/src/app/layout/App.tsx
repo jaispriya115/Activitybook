@@ -25,6 +25,8 @@ function App() {
 		return <Loading content="Loading app .... " />;
 	}
 
+	console.log(userStore.user);
+
 	return (
 		<>
 			<ModalContainer />

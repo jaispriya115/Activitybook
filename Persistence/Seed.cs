@@ -30,7 +30,6 @@ namespace Persistence
                         Category = "drinks",
                         City = "India",
                         Venue = "Pub",
-                        IsCancelled = false,
                         Attendees = new List<ActivityAttendee>
                             {
                                 new ActivityAttendee
@@ -53,7 +52,6 @@ namespace Persistence
                         Category = "culture",
                         City = "Paris",
                         Venue = "Eifel Tower",
-                        IsCancelled = false,
                         Attendees = new List<ActivityAttendee>
                             {
                                 new ActivityAttendee
@@ -71,7 +69,6 @@ namespace Persistence
                         Category = "culture",
                         City = "India",
                         Venue = "Natural History Museum",
-                        IsCancelled = false,
                         Attendees = new List<ActivityAttendee>
                             {
                                 new ActivityAttendee
@@ -94,7 +91,6 @@ namespace Persistence
                         Category = "music",
                         City = "India",
                         Venue = "O2 Arena",
-                        IsCancelled = false,
                         Attendees = new List<ActivityAttendee>
                             {
                                 new ActivityAttendee
@@ -117,7 +113,6 @@ namespace Persistence
                         Category = "drinks",
                         City = "India",
                         Venue = "Another pub",
-                        IsCancelled = false,
                         Attendees = new List<ActivityAttendee>
                             {
                                 new ActivityAttendee
@@ -140,7 +135,6 @@ namespace Persistence
                         Category = "drinks",
                         City = "India",
                         Venue = "Yet another pub",
-                        IsCancelled = false,
                         Attendees = new List<ActivityAttendee>
                             {
                                 new ActivityAttendee
@@ -158,7 +152,6 @@ namespace Persistence
                         Category = "drinks",
                         City = "India",
                         Venue = "Just another pub",
-                        IsCancelled = false,
                         Attendees = new List<ActivityAttendee>
                             {
                                 new ActivityAttendee
@@ -181,7 +174,6 @@ namespace Persistence
                         Category = "music",
                         City = "India",
                         Venue = "Roundhouse Play",
-                        IsCancelled = false,
                         Attendees = new List<ActivityAttendee>
                             {
                                 new ActivityAttendee
@@ -204,7 +196,6 @@ namespace Persistence
                         Category = "travel",
                         City = "India",
                         Venue = "Somewhere on the Ganges",
-                        IsCancelled = false,
                         Attendees = new List<ActivityAttendee>
                             {
                                 new ActivityAttendee
@@ -227,7 +218,6 @@ namespace Persistence
                         Category = "film",
                         City = "India",
                         Venue = "Cinema",
-                        IsCancelled = false,
                         Attendees = new List<ActivityAttendee>
                             {
                                 new ActivityAttendee
