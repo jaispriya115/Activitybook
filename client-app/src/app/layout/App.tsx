@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import { Container } from "semantic-ui-react";
 import { observer } from "mobx-react-lite";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import HomePage from "../../features/Home/HomePage";
 import { ToastContainer } from "react-toastify";
 import { useEffect } from "react";
@@ -25,10 +25,9 @@ function App() {
 		return <Loading content="Loading app .... " />;
 	}
 
-	console.log(userStore.user);
-
 	return (
 		<>
+			<ScrollRestoration />
 			<ModalContainer />
 			<ToastContainer
 				position="bottom-right"

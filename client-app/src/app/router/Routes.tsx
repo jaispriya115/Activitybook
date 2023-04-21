@@ -1,9 +1,11 @@
-import { createBrowserRouter, RouteObject } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
 import ActivitiesDashboard from "../../features/Activities/dashboard/ActivitiesDashboard";
 import ActivityDetails from "../../features/Activities/details/ActivityDetails";
 import ActivityForm from "../../features/Activities/form/ActivityForm";
 import Login from "../../features/users/Login";
 import App from "../layout/App";
+import NotFound from "../../features/errors/NotFound";
+import RequireAuth from "./RequireAuth";
 
 export const routes: RouteObject[] = [
 	{
@@ -11,24 +13,38 @@ export const routes: RouteObject[] = [
 		element: <App />,
 		children: [
 			{
-				path: "events",
-				element: <ActivitiesDashboard />,
+				element: <RequireAuth />,
+				children: [
+					{
+						path: "events",
+						element: <ActivitiesDashboard />,
+					},
+					{
+						path: "events/:id",
+						element: <ActivityDetails />,
+					},
+					{
+						path: "createEvent",
+						element: <ActivityForm key="create" />,
+					},
+					{
+						path: "manage/:id",
+						element: <ActivityForm key="manage" />,
+					},
+				],
 			},
 			{
-				path: "events/:id",
-				element: <ActivityDetails />,
+				path: "notfound",
+				element: <NotFound />,
 			},
 			{
-				path: "createEvent",
-				element: <ActivityForm key="create" />,
-			},
-			{
-				path: "manage/:id",
-				element: <ActivityForm key="manage" />,
-			},
-			{
-				path: "login",
-				element: <Login />,
+				path: "*",
+				element: (
+					<Navigate
+						replace
+						to="/notfound"
+					/>
+				),
 			},
 		],
 	},
